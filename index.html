@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neto & Maria Sophia 💕</title>
+<style>
+  :root{
+    --pink: #ff8fab;
+    --pink-deep: #ff5c8a;
+    --cream: #fff0f3;
+    --wine: #7a3b52;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+    background: linear-gradient(160deg, #ffe3ec 0%, #ffd1de 40%, #ffc2d1 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--wine);
+    overflow-x:hidden;
+  }
+  #hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+  }
+  .heart{
+    position:absolute;
+    bottom:-10%;
+    font-size:20px;
+    opacity:0.75;
+    animation: floatUp linear infinite;
+    user-select:none;
+  }
+  @keyframes floatUp{
+    0%{ transform: translateY(0) translateX(0) rotate(0deg); opacity:0; }
+    10%{ opacity:0.9; }
+    100%{ transform: translateY(-115vh) translateX(var(--drift,20px)) rotate(360deg); opacity:0; }
+  }
+  main{
+    position:relative;
+    z-index:1;
+    max-width:640px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+    text-align:center;
+  }
+  .intro{
+    font-size:15px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color: var(--pink-deep);
+    opacity:0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay:0.2s;
+  }
+  h1{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3.2rem;
+    margin: 6px 0 0;
+    color: var(--pink-deep);
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.6);
+    opacity:0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay:0.5s;
+  }
+  .subtitle{
+    margin-top:6px;
+    font-size:1.05rem;
+    opacity:0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay:0.9s;
+  }
+  .polaroid{
+    margin: 36px auto 8px;
+    max-width: 340px;
+    background:#fff;
+    padding: 14px 14px 46px;
+    border-radius: 6px;
+    box-shadow: 0 18px 40px rgba(122,59,82,0.28);
+    transform: rotate(-3deg);
+    opacity:0;
+    animation: popIn 1s cubic-bezier(.26,1.4,.44,1) forwards;
+    animation-delay:1.3s;
+    position:relative;
+  }
+  .polaroid img{
+    width:100%;
+    display:block;
+    border-radius: 2px;
+    object-fit:cover;
+    max-height: 420px;
+  }
+  .polaroid::after{
+    content:"11.08.2026";
+    position:absolute;
+    bottom:14px;
+    left:0;
+    right:0;
+    text-align:center;
+    font-family:'Brush Script MT', cursive;
+    font-size:1.4rem;
+    color: var(--pink-deep);
+  }
+  @keyframes popIn{
+    0%{ opacity:0; transform: rotate(-3deg) scale(0.85) translateY(30px); }
+    100%{ opacity:1; transform: rotate(-3deg) scale(1) translateY(0); }
+  }
+  @keyframes fadeIn{
+    from{ opacity:0; transform: translateY(14px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  .counter-box{
+    margin-top: 44px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 26px 18px;
+    box-shadow: 0 10px 30px rgba(122,59,82,0.12);
+    opacity:0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay:1.8s;
+  }
+  .counter-label{
+    font-size:0.85rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color: var(--pink-deep);
+    margin-bottom:14px;
+  }
+  .counter{
+    display:flex;
+    justify-content:center;
+    gap: 14px;
+    flex-wrap:wrap;
+  }
+  .counter div{
+    min-width:64px;
+  }
+  .counter .num{
+    font-size:1.8rem;
+    font-weight:700;
+    color: var(--wine);
+    background:#fff;
+    border-radius:12px;
+    padding:10px 6px;
+    box-shadow: 0 6px 14px rgba(122,59,82,0.15);
+  }
+  .counter .unit{
+    display:block;
+    font-size:0.7rem;
+    margin-top:6px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color: var(--pink-deep);
+  }
+
+  .letter{
+    margin-top: 46px;
+    text-align:left;
+    background:#fff;
+    border-radius:18px;
+    padding: 28px 26px;
+    box-shadow: 0 14px 34px rgba(122,59,82,0.18);
+    line-height:1.75;
+    font-size:1.02rem;
+    opacity:0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay:2.2s;
+  }
+  .letter p{ margin: 0 0 14px; }
+  .letter p:last-child{ margin-bottom:0; }
+  .signature{
+    text-align:right;
+    font-family:'Brush Script MT', cursive;
+    font-size:1.6rem;
+    color: var(--pink-deep);
+    margin-top:10px !important;
+  }
+
+  .reveal-wrap{
+    margin-top: 40px;
+    opacity:0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay:2.6s;
+  }
+  #loveBtn{
+    background: var(--pink-deep);
+    color:#fff;
+    border:none;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-size:1rem;
+    cursor:pointer;
+    box-shadow: 0 10px 22px rgba(255,92,138,0.4);
+    transition: transform .2s ease;
+  }
+  #loveBtn:hover{ transform: scale(1.05); }
+  #secretMsg{
+    display:none;
+    margin-top:22px;
+    font-size:1.15rem;
+    font-family:'Brush Script MT', cursive;
+    color: var(--wine);
+    animation: popIn .6s ease forwards;
+  }
+
+  footer{
+    margin-top:50px;
+    font-size:0.8rem;
+    color: var(--pink-deep);
+    opacity:0.8;
+  }
+</style>
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<main>
+  <div class="intro">Feliz aniversário de namoro</div>
+  <h1>Neto &amp; Maria Sophia</h1>
+  <div class="subtitle">1 ano e 4 meses de nós dois 💕</div>
+
+  <div class="polaroid">
+    <img src="assets/nos.jpg" alt="Neto e Maria Sophia">
+  </div>
+
+  <div class="counter-box">
+    <div class="counter-label">Juntos há</div>
+    <div class="counter">
+      <div><span class="num" id="c-days">0</span><span class="unit">dias</span></div>
+      <div><span class="num" id="c-hours">0</span><span class="unit">horas</span></div>
+      <div><span class="num" id="c-min">0</span><span class="unit">min</span></div>
+      <div><span class="num" id="c-sec">0</span><span class="unit">seg</span></div>
+    </div>
+  </div>
+
+  <div class="letter">
+    <p>Maria Sophia,</p>
+    <p>Faz 1 ano e 4 meses desde 11 de abril de 2025, e cada dia com você continua sendo o meu favorito. Esse tempo passou rápido porque foi bom demais — cheio do seu jeito carinhoso, das nossas conversas bobas, dos nossos planos e das pequenas coisas que só a gente entende.</p>
+    <p>Fiz esse cantinho simples só pra te lembrar o quanto você é especial pra mim e o quanto eu sou grato por termos escolhido um ao outro, todos os dias, desde então.</p>
+    <p>Obrigado por ser meu lugar favorito.</p>
+    <p class="signature">Com amor, Neto</p>
+  </div>
+
+  <div class="reveal-wrap">
+    <button id="loveBtn">Clica aqui, meu amor 🤍</button>
+    <div id="secretMsg">Eu te amo mais do que qualquer animação nessa tela consegue mostrar. 💌</div>
+  </div>
+
+  <footer>feito com carinho por Neto, para Maria Sophia</footer>
+</main>
+
+<script>
+  // Floating hearts background
+  const heartsContainer = document.getElementById('hearts');
+  const heartEmojis = ['💕','💖','💗','🤍','💞'];
+  function spawnHeart(){
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+    const left = Math.random()*100;
+    const duration = 6 + Math.random()*6;
+    const drift = (Math.random()*80 - 40) + 'px';
+    h.style.left = left + 'vw';
+    h.style.fontSize = (14 + Math.random()*18) + 'px';
+    h.style.animationDuration = duration + 's';
+    h.style.setProperty('--drift', drift);
+    heartsContainer.appendChild(h);
+    setTimeout(()=> h.remove(), duration*1000 + 500);
+  }
+  setInterval(spawnHeart, 550);
+  for(let i=0;i<10;i++) setTimeout(spawnHeart, i*200);
+
+  // Live counter since 11/04/2025 00:00
+  const start = new Date(2025, 3, 11, 0, 0, 0);
+  function updateCounter(){
+    const now = new Date();
+    let diff = Math.floor((now - start)/1000);
+    const days = Math.floor(diff / 86400); diff -= days*86400;
+    const hours = Math.floor(diff / 3600); diff -= hours*3600;
+    const min = Math.floor(diff / 60); diff -= min*60;
+    const sec = diff;
+    document.getElementById('c-days').textContent = days;
+    document.getElementById('c-hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('c-min').textContent = String(min).padStart(2,'0');
+    document.getElementById('c-sec').textContent = String(sec).padStart(2,'0');
+  }
+  updateCounter();
+  setInterval(updateCounter, 1000);
+
+  // Secret message reveal
+  document.getElementById('loveBtn').addEventListener('click', function(){
+    const msg = document.getElementById('secretMsg');
+    msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+  });
+</script>
+
+</body>
+</html>
