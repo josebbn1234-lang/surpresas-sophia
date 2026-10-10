@@ -1,3 +1,5 @@
+const B = import.meta.env.BASE_URL;
+
 // ==============================================================================
 // CONFIGURAÇÃO DO SITE - 1 ANO E 6 MESES DE NAMORO
 // NETO & MARIA SOPHIA
@@ -72,7 +74,7 @@ export const COUPLE_DATA: CoupleConfig = {
   heroSubtitle: "1 ano e 6 meses da nossa história... e eu escolheria você em todas as versões da minha vida.",
   heroButtonText: "Clique para começar nossa história",
   counterPhrase: "1 ano e 6 meses de nós. E ainda parece que meu coração está descobrindo você pela primeira vez.",
-  audioPath: "/audio/nossa-musica.mp3",
+  audioPath: B + "audio/nossa-musica.mp3",
 };
 
 // Linha do Tempo: Momentos marcantes
@@ -83,8 +85,8 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     title: "O começo da nossa história",
     date: "O primeiro contato",
     description: "Aquele primeiro instante em que nossos caminhos se cruzaram e o universo conspirou para que você se tornasse o meu pensamento favorito todos os dias.",
-    image: "/images/nos.jpg",
-    video: "/images/o-comeco-da-nossa-historia.mp4",
+    image: B + "images/nos.jpg",
+    video: B + "images/o-comeco-da-nossa-historia.mp4",
     caption: "O sorriso que mudou o meu mundo para sempre."
   },
   {
@@ -93,7 +95,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     title: "O dia em que tudo começou",
     date: "O pedido inesquecível",
     description: "Quando demos as mãos com a certeza de que ali começava a melhor aventura das nossas vidas. O 'sim' que preencheu meus dias de paz e amor.",
-    image: "/images/o-dia-em-que-tudo-comecou.jpeg",
+    image: B + "images/o-dia-em-que-tudo-comecou.jpeg",
     caption: "O instante em que dois corações escolheram caminhar juntos."
   },
   {
@@ -102,7 +104,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     title: "Nossas memórias favoritas",
     date: "Momentos inesquecíveis",
     description: "Cada viagem, cada gargalhada compartilhada até a barriga doer, cada abraço apertado depois de um dia longo. As memórias que guardo como joias no peito.",
-    image: "/images/nossas-memorias-favoritas.jpeg",
+    image: B + "images/nossas-memorias-favoritas.jpeg",
     caption: "Guardado no melhor lugar da minha memória."
   },
   {
@@ -111,7 +113,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     title: "Os momentos simples que se tornaram especiais",
     date: "A beleza do cotidiano",
     description: "Conversar sobre tudo e sobre nada, o café da manhã devagar, assistir séries juntos enrolados na coberta. É na calma de estar com você que eu encontro o meu lar.",
-    image: "/images/os-momentos-simples.jpeg",
+    image: B + "images/os-momentos-simples.jpeg",
     caption: "A felicidade mais pura está nas coisas simples com você."
   },
   {
@@ -120,7 +122,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     title: "Tudo o que ainda vamos viver juntos",
     date: "Infinitos capítulos pela frente",
     description: "Sonhos que ainda vamos realizar, viagens que ainda vamos fazer e todas as conquistas que construiremos lado a lado. O futuro é lindo porque tem você nele.",
-    image: "/images/tudo-o-que-ainda-vamos-viver-juntos.png",
+    image: B + "images/tudo-o-que-ainda-vamos-viver-juntos.png",
     caption: "Apenas o comecinho de uma vida inteira juntos."
   }
 ];
@@ -131,7 +133,7 @@ export const GALLERY_PHOTOS: PhotoItem[] = [
     id: "foto-1",
     title: "Nós Dois",
     caption: "O seu abraço é o meu lugar seguro favorito no mundo inteiro.",
-    image: "/images/nos-dois.jpeg",
+    image: B + "images/nos-dois.jpeg",
     aspect: "tall",
     featured: true
   },
@@ -139,21 +141,21 @@ export const GALLERY_PHOTOS: PhotoItem[] = [
     id: "foto-2",
     title: "Seu Sorriso",
     caption: "A razão pela qual os meus dias são infinitamente mais coloridos.",
-    image: "/images/seu-sorriso.jpeg",
+    image: B + "images/seu-sorriso.jpeg",
     aspect: "square"
   },
   {
     id: "foto-4",
     title: "Cumplicidade",
     caption: "Dois corações que se entendem até no silêncio de um olhar.",
-    image: "/images/cumplicidade.jpeg",
+    image: B + "images/cumplicidade.jpeg",
     aspect: "square"
   },
   {
     id: "foto-6",
     title: "Para Sempre",
     caption: "1 ano e 6 meses... e a certeza inabalável de te amar cada dia mais.",
-    image: "/images/para-sempre.jpeg",
+    image: B + "images/para-sempre.jpeg",
     aspect: "wide"
   }
 ];
